@@ -1,0 +1,6 @@
+C:\GitHub\Projects\ReverserTests\ReverserConsole\bin\Debug\ReverserConsole.exe
+C:\GitHub\Projects\ReverserTests\ReverserConsole\bin\Debug\ReverserConsole.pdb
+C:\GitHub\Projects\ReverserTests\ReverserConsole\obj\x86\Debug\ReverserConsole.exe
+C:\GitHub\Projects\ReverserTests\ReverserConsole\obj\x86\Debug\ReverserConsole.pdb
+C:\GitHub\Projects\ReverserTests\ReverserConsole\bin\Debug\MoodReverser.dll
+C:\GitHub\Projects\ReverserTests\ReverserConsole\bin\Debug\MoodReverser.pdb

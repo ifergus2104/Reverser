@@ -1,0 +1,8 @@
+C:\GitHub\Projects\MoodReverser\bin\Release\MoodReverser.dll
+C:\GitHub\Projects\MoodReverser\bin\Release\MoodReverser.pdb
+C:\GitHub\Projects\MoodReverser\obj\Release\MoodReverser.dll
+C:\GitHub\Projects\MoodReverser\obj\Release\MoodReverser.pdb
+C:\GitHub\Projects\Reverser\MoodReverser\bin\Release\MoodReverser.dll
+C:\GitHub\Projects\Reverser\MoodReverser\bin\Release\MoodReverser.pdb
+C:\GitHub\Projects\Reverser\MoodReverser\obj\Release\MoodReverser.dll
+C:\GitHub\Projects\Reverser\MoodReverser\obj\Release\MoodReverser.pdb

@@ -1,0 +1,4 @@
+C:\GitHub\Projects\MoodReverser\bin\Debug\MoodReverser.dll
+C:\GitHub\Projects\MoodReverser\bin\Debug\MoodReverser.pdb
+C:\GitHub\Projects\MoodReverser\obj\Debug\MoodReverser.dll
+C:\GitHub\Projects\MoodReverser\obj\Debug\MoodReverser.pdb
