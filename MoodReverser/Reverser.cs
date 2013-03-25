@@ -9,6 +9,7 @@ namespace MoodReverser
     {
         public string Reverse(string forwardText)
         {
+            if ((forwardText == string.Empty) || (forwardText == null)) throw new ArgumentException("Invalid Argument");
             var reverseChar = forwardText.Reverse();
             var reverseString = string.Empty;
             foreach (char character in reverseChar)

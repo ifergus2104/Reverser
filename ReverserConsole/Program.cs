@@ -6,14 +6,20 @@ using MoodReverser;
 
 namespace ReverserConsole
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            IReverser reverser = new Reverser();
-            var reversed = reverser.Reverse("abcdef");
-            Console.Write(reversed);
+            try
+            {
+                IReverser reverser = new Reverser();
+                var reversed = reverser.Reverse("abcdef");
+                Console.Write(reversed);
+            }
+            catch (Exception e)
+            {
+                Console.Write("{0} Exception Caught:", e.Message);
+            }
         }
-
     }
 }
