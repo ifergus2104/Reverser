@@ -11,10 +11,10 @@ namespace MoodReverser
         {
             if ((forwardText == string.Empty) || (forwardText == null)) throw new ArgumentException("Invalid Argument");
             var reverseChar = forwardText.Reverse();
-            var reverseString = string.Empty;
+            var reverseText = string.Empty;
             foreach (char character in reverseChar)
-                reverseString = reverseString + character;
-            return reverseString;
+                reverseText = reverseText + character;
+            return reverseText;
         }
     }
 }
