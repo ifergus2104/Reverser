@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Moq;
 using NUnit.Framework;
 using MoodReverser;
 
@@ -11,7 +10,7 @@ namespace ReverserTests
     public class ReverseTextTests
     {
         [Test]
-        public void ValidTextReversalReturnsValidReversedText()
+        public void ValidMultipleCharacterTextReversalReturnsValidReversedText()
         {
             var expected = "fedcba";
             IReverser reverser = new Reverser();
@@ -35,7 +34,7 @@ namespace ReverserTests
         }
 
         [Test]
-        public void EmptyStringTextReversalRaisesInvalidInputError()
+        public void EmptyStringTextReversalThrowsValidArgumentExceptionError()
         {
             IReverser reverser = new Reverser();
             var reverserException = Assert.Throws(Is.TypeOf<ArgumentException>().
@@ -44,7 +43,7 @@ namespace ReverserTests
         }
 
         [Test]
-        public void NullTextReversalRaisesInvalidInputError()
+        public void NullTextReversalThrowsValidArgumentExceptionError()
         {
             IReverser reverser = new Reverser();
             var reverserException = Assert.Throws(Is.TypeOf<ArgumentException>().

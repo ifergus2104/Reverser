@@ -12,8 +12,11 @@ namespace ReverserConsole
         {
             try
             {
+                var fileName = @"c:\github\texttoreverse1.txt";
+                IFile textFile = new TextFile(fileName);
                 IReverser reverser = new Reverser();
-                var reversed = reverser.Reverse("abcdef");
+                ITextFileReverser textFileReverser = new TextFileReverser(textFile, reverser);
+                var reversed = textFileReverser.ReverseTextFileContents(textFile.GetFileContents(textFile.FileName));
                 Console.Write(reversed);
             }
             catch (Exception e)
