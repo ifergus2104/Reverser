@@ -16,7 +16,8 @@ namespace ReverserConsole
                 IFile textFile = new TextFile(fileName);
                 IReverser reverser = new Reverser();
                 ITextFileReverser textFileReverser = new TextFileReverser(textFile, reverser);
-                var reversed = textFileReverser.ReverseTextFileContents(textFile.GetFileContents(textFile.FileName));
+                var forwardText = textFile.GetFileContents(textFile.FileName);
+                var reversed = textFileReverser.ReverseTextFileContents(forwardText);
                 Console.Write(reversed);
             }
             catch (Exception e)

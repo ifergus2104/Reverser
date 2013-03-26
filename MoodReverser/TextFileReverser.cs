@@ -10,7 +10,7 @@ namespace MoodReverser
         private IFile _textFile;
         private IReverser _reverser;
 
-        public TextFileReverser()
+        private TextFileReverser()
         {
         }
 
@@ -31,7 +31,10 @@ namespace MoodReverser
         public string ReverseTextFileContents(string fileName)
         {
             if (this._textFile.FileExists(fileName))
-                return _reverser.Reverse(this._textFile.GetFileContents(this._textFile.FileName));
+            {
+                var forwardText = this._textFile.GetFileContents(this._textFile.FileName);
+                return _reverser.Reverse(forwardText);
+            }
             return string.Empty;
         } 
     }
