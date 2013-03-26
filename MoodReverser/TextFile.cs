@@ -40,7 +40,7 @@ namespace MoodReverser
         {
             this.FileName = fileName;
             var textFileContents = string.Empty;
-            if (this.FileExists(this._fileName))
+            if (this.FileExists(this.FileName))
             {
                 var allLines = File.ReadAllLines(this.FileName);
                 foreach (string line in allLines)

@@ -12,7 +12,7 @@ namespace ReverserConsole
         {
             try
             {
-                var fileName = @"c:\github\texttoreverse1.txt";
+                var fileName = @"c:\github\texttoreverse.txt";
                 IFile textFile = new TextFile(fileName);
                 IReverser reverser = new Reverser();
                 ITextFileReverser textFileReverser = new TextFileReverser(textFile, reverser);

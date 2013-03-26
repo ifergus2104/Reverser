@@ -7,7 +7,7 @@ using MoodReverser;
 namespace ReverserTests
 {
     [TestFixture]
-    public class ReverseTextTests
+    public class ReverseTests
     {
         [Test]
         public void ValidMultipleCharacterTextReversalReturnsValidReversedText()
