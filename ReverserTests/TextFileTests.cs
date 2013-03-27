@@ -12,6 +12,7 @@ namespace ReverserTests
     public class TextFileTests
     {
         [Test]
+        [Category("Unit Tests")]
         public void EmptyStringFileExistsThrowsValidArgumentExceptionError()
         {
             IFile textFile = new TextFile();
@@ -21,6 +22,7 @@ namespace ReverserTests
         }
 
         [Test]
+        [Category("Unit Tests")]
         public void NullStringFileExistsThrowsValidArgumentExceptionError()
         {
             IFile textFile = new TextFile();

@@ -10,6 +10,7 @@ namespace ReverserTests
     public class ReverseTests
     {
         [Test]
+        [Category("Unit Tests")]
         public void ValidMultipleCharacterTextReversalReturnsValidReversedText()
         {
             var expected = "fedcba";
@@ -18,6 +19,7 @@ namespace ReverserTests
         }
 
         [Test]
+        [Category("Unit Tests")]
         public void ValidOneCharacterTextReversalReturnsValidOneCharacterText()
         {
             var expected = "a";
@@ -26,6 +28,7 @@ namespace ReverserTests
         }
 
         [Test]
+        [Category("Unit Tests")]
         public void ValidMixedNumericalCharacterTextReversalReturnsValidReversedText()
         {
             var expected = "4321fedcba";
@@ -34,6 +37,7 @@ namespace ReverserTests
         }
 
         [Test]
+        [Category("Unit Tests")]
         public void EmptyStringTextReversalThrowsValidArgumentExceptionError()
         {
             IReverser reverser = new Reverser();
@@ -43,6 +47,7 @@ namespace ReverserTests
         }
 
         [Test]
+        [Category("Unit Tests")]
         public void NullTextReversalThrowsValidArgumentExceptionError()
         {
             IReverser reverser = new Reverser();

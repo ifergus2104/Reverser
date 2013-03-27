@@ -16,7 +16,7 @@ namespace ReverserTests
         private Mock<IReverser> _mockReverser;
 
         [Test]
-        [Category("Unit Test")]
+        [Category("Unit Tests")]
         [ExpectedException(typeof(ArgumentNullException))]
         public void NullDependenciesTextFileReverserThrowsInvalidArgumentException()
         {
@@ -66,11 +66,11 @@ namespace ReverserTests
         {
             _mockTextFile = new Mock<IFile>();
             _mockReverser = new Mock<IReverser>();
-            _mockTextFile.Setup(s => s.FileExists("text.file")).Returns(true);
+            _mockTextFile.Setup(s => s.FileExists("text.file")).Returns(false);
             ITextFileReverser textFileReverser = new TextFileReverser(_mockTextFile.Object, _mockReverser.Object);
             var reversedText = textFileReverser.ReverseTextFileContents("text.file");
             _mockTextFile.Verify(v => v.FileExists("text.file"), Times.Exactly(1));
-            _mockTextFile.Verify(v => v.GetFileContents(It.IsAny<string>()), Times.Exactly(1));
+            _mockTextFile.Verify(v => v.GetFileContents(It.IsAny<string>()), Times.Never());
         }
 
         [Test]

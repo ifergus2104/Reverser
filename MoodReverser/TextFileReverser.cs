@@ -22,12 +22,6 @@ namespace MoodReverser
             this._reverser = reverser;
         }
 
-        private bool InValidArguments(IFile textFile, IReverser reverser)
-        {
-            bool inValid = ((textFile == null) || (reverser == null));
-            return inValid;
-        }
-
         public string ReverseTextFileContents(string fileName)
         {
             if (this._textFile.FileExists(fileName))
@@ -36,6 +30,12 @@ namespace MoodReverser
                 return _reverser.Reverse(forwardText);
             }
             return string.Empty;
-        } 
+        }
+
+        private bool InValidArguments(IFile textFile, IReverser reverser)
+        {
+            bool inValid = ((textFile == null) || (reverser == null));
+            return inValid;
+        }
     }
 }
