@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using Moq;
 using NUnit.Framework;
-using MoodReverser;
+using Reverser;
 
 namespace ReverserTests
 {
@@ -71,17 +71,6 @@ namespace ReverserTests
             var reversedText = textFileReverser.ReverseTextFileContents("text.file");
             _mockTextFile.Verify(v => v.FileExists("text.file"), Times.Exactly(1));
             _mockTextFile.Verify(v => v.GetFileContents(It.IsAny<string>()), Times.Never());
-        }
-
-        [Test]
-        [Category("Integration Test")]
-        public void MissingFileOnCallingGetFileContentsThrowsFileNotFoundException()
-        {   
-            var fileName = @"c:\github\MissingTextToReverse.txt";
-            IFile reverserFile = new TextFile(fileName);
-            var reverserFileException = Assert.Throws(Is.TypeOf<FileNotFoundException>().
-                And.Message.EqualTo("File Not Found"), 
-                delegate { reverserFile.GetFileContents("text.file"); });
         }        
     }
 }

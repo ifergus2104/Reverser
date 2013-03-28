@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MoodReverser;
+using System.Configuration;
+using Reverser;
 
 namespace ReverserConsole
 {
@@ -11,13 +12,12 @@ namespace ReverserConsole
         public static void Main(string[] args)
         {
             try
-            {
+            {                
                 var fileName = @"c:\github\texttoreverse.txt";
                 IFile textFile = new TextFile(fileName);
-                IReverser reverser = new Reverser();
+                IReverser reverser = new Reverser.Reverser();
                 ITextFileReverser textFileReverser = new TextFileReverser(textFile, reverser);
-                var forwardText = textFile.GetFileContents(textFile.FileName);
-                var reversed = textFileReverser.ReverseTextFileContents(forwardText);
+                var reversed = textFileReverser.ReverseTextFileContents(textFile.FileName);
                 Console.Write(reversed);
             }
             catch (Exception e)

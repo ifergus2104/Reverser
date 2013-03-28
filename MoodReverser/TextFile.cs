@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace MoodReverser
+namespace Reverser
 {
     public class TextFile : IFile
     {

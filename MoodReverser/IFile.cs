@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MoodReverser
+namespace Reverser
 {
     public interface IFile
     {

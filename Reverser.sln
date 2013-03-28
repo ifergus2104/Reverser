@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoodReverser", "MoodReverser\MoodReverser.csproj", "{6AE264CE-310F-475C-BE7F-9D43E1CFA9F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverser", "MoodReverser\Reverser.csproj", "{6AE264CE-310F-475C-BE7F-9D43E1CFA9F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverserTests", "ReverserTests\ReverserTests.csproj", "{304EED0C-A5F7-4E87-8093-A4644273AB41}"
 EndProject

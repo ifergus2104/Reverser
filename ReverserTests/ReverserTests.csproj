@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MoodReverser">
-      <HintPath>..\MoodReverser\bin\Release\MoodReverser.dll</HintPath>
-    </Reference>
     <Reference Include="Moq">
       <HintPath>..\lib\Moq.dll</HintPath>
     </Reference>
@@ -54,6 +51,12 @@
     <Compile Include="ReverseTests.cs" />
     <Compile Include="TextFileReverserTests.cs" />
     <Compile Include="TextFileTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MoodReverser\Reverser.csproj">
+      <Project>{6AE264CE-310F-475C-BE7F-9D43E1CFA9F7}</Project>
+      <Name>Reverser</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

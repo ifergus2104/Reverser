@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace MoodReverser
+namespace Reverser
 {
     public class Reverser : IReverser
     {
         public string Reverse(string forwardText)
         {
-            if (InValidArgument(forwardText)) 
-                throw new ArgumentException("Invalid Argument");
+            if (InValidArgument(forwardText)) throw new ArgumentException("Invalid Argument");
             var reverseChar = forwardText.Reverse();
             var reverseText = string.Empty;
             foreach (char character in reverseChar)
