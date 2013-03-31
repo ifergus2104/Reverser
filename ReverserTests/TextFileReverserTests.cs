@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using Moq;
 using NUnit.Framework;
-using Reverser;
+using FileManager;
 
 namespace ReverserTests
 {

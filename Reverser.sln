@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverserTests", "ReverserTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverserConsole", "ReverserConsole\ReverserConsole.csproj", "{73EEA96E-2491-4B67-999B-0D24EC6DC100}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager", "FileManager\FileManager.csproj", "{C72C5E0E-0762-4304-A905-0A196BCE0220}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{73EEA96E-2491-4B67-999B-0D24EC6DC100}.Release|Mixed Platforms.Build.0 = Release|x86
 		{73EEA96E-2491-4B67-999B-0D24EC6DC100}.Release|x86.ActiveCfg = Release|x86
 		{73EEA96E-2491-4B67-999B-0D24EC6DC100}.Release|x86.Build.0 = Release|x86
+		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

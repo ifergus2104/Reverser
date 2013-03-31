@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace Reverser
+namespace FileManager
 {
     public class TextFile : IFile
     {
         private string _fileName;
 
-        public TextFile()
+        internal TextFile()
         {
         }
 
-        public TextFile(string fileName)
+        internal TextFile(string fileName)
         {
             this.FileName = fileName;
         }

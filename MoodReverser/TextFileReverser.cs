@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using FileManager;
 
-namespace Reverser
+namespace FileManager
 {
     public class TextFileReverser : ITextFileReverser
     {

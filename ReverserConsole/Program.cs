@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Configuration;
-using Reverser;
+using FileManager;
 
 namespace ReverserConsole
 {
@@ -14,8 +14,9 @@ namespace ReverserConsole
             try
             {                
                 var fileName = @"c:\github\texttoreverse.txt";
-                IFile textFile = new TextFile(fileName);
-                IReverser reverser = new Reverser.Reverser();
+                IFileFactory fileFactory = new FileFactory();
+                IFile textFile = fileFactory.Create(FileTypes.Text, fileName);
+                IReverser reverser = new FileManager.Reverser();
                 ITextFileReverser textFileReverser = new TextFileReverser(textFile, reverser);
                 var reversed = textFileReverser.ReverseTextFileContents(textFile.FileName);
                 Console.Write(reversed);

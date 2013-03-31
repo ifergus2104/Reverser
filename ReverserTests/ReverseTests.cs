@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
-using Reverser;
+using FileManager;
 
 namespace ReverserTests
 {
@@ -14,7 +14,7 @@ namespace ReverserTests
         public void ValidMultipleCharacterTextReversalReturnsValidReversedText()
         {
             var expected = "fedcba";
-            IReverser reverser = new Reverser.Reverser();
+            IReverser reverser = new FileManager.Reverser();
             Assert.That(expected, Is.EqualTo(reverser.Reverse("abcdef")).IgnoreCase);
         }
 
@@ -23,7 +23,7 @@ namespace ReverserTests
         public void ValidOneCharacterTextReversalReturnsValidOneCharacterText()
         {
             var expected = "a";
-            IReverser reverser = new Reverser.Reverser();
+            IReverser reverser = new FileManager.Reverser();
             Assert.That(expected, Is.EqualTo(reverser.Reverse("a")).IgnoreCase);
         }
 
@@ -32,7 +32,7 @@ namespace ReverserTests
         public void ValidMixedNumericalCharacterTextReversalReturnsValidReversedText()
         {
             var expected = "4321fedcba";
-            IReverser reverser = new Reverser.Reverser();
+            IReverser reverser = new FileManager.Reverser();
             Assert.That(expected, Is.EqualTo(reverser.Reverse("abcdef1234")).IgnoreCase);
         }
 
@@ -40,7 +40,7 @@ namespace ReverserTests
         [Category("Unit Tests")]
         public void EmptyStringTextReversalThrowsValidArgumentExceptionError()
         {
-            IReverser reverser = new Reverser.Reverser();
+            IReverser reverser = new FileManager.Reverser();
             var reverserException = Assert.Throws(Is.TypeOf<ArgumentException>().
                 And.Message.EqualTo("Invalid Argument"),
                 delegate { reverser.Reverse(string.Empty); });
@@ -50,7 +50,7 @@ namespace ReverserTests
         [Category("Unit Tests")]
         public void NullTextReversalThrowsValidArgumentExceptionError()
         {
-            IReverser reverser = new Reverser.Reverser();
+            IReverser reverser = new FileManager.Reverser();
             var reverserException = Assert.Throws(Is.TypeOf<ArgumentException>().
                 And.Message.EqualTo("Invalid Argument"),
                 delegate { reverser.Reverse(null); });
