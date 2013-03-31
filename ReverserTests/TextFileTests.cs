@@ -16,7 +16,7 @@ namespace ReverserTests
     {
         [Test]
         [Category("Unit Tests")]
-        public void EmptyStringFileExistsThrowsValidArgumentExceptionError()
+        public void EmptyStringFileExistsThrowsValidArgumentExceptionException()
         {
             IFile textFile = CreateTextFile("text.file");
             var textFileException = Assert.Throws(Is.TypeOf<ArgumentException>().
@@ -26,7 +26,7 @@ namespace ReverserTests
 
         [Test]
         [Category("Unit Tests")]
-        public void NullStringFileExistsThrowsValidArgumentExceptionError()
+        public void NullStringFileExistsThrowsValidArgumentExceptionException()
         {
             IFile textFile = CreateTextFile("text.file");
             var textFileException = Assert.Throws(Is.TypeOf<ArgumentException>().

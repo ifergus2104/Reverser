@@ -22,7 +22,7 @@ namespace ReverserTests
 
         [Test]
         [Category("Unit Tests")]
-        public void FileFactoryCreateTextFileMissingFileNameThrowArgumentExceptionError()
+        public void FileFactoryCreateTextFileMissingFileNameReturnsValidFile()
         {
             FileFactory<IFile> fileFactory = new FileFactory<IFile>();
             Assert.That(fileFactory.Create<TextFile>(null), Is.TypeOf(typeof(TextFile)));
@@ -31,7 +31,7 @@ namespace ReverserTests
         [Test]
         [Category("Unit Tests")]
         [ExpectedException(typeof(TargetInvocationException))]
-        public void FileFactoryCreateTextFileEmptyFileNameThrowArgumentExceptionError()
+        public void FileFactoryCreateTextFileEmptyFileNameThrowTargetInvocationException()
         {
             FileFactory<IFile> fileFactory = new FileFactory<IFile>();
             IFile textFile = fileFactory.Create<TextFile>(string.Empty);
