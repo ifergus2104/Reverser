@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Configuration;
 using FileManager;
+using Reverser;
+using FileReverser;
 
 namespace ReverserConsole
 {
@@ -11,12 +13,14 @@ namespace ReverserConsole
     {
         public static void Main(string[] args)
         {
+            IFile textFile;
             try
             {                
                 var fileName = @"c:\github\texttoreverse.txt";
-                IFileFactory fileFactory = new FileFactory();
-                IFile textFile = fileFactory.Create(FileTypes.Text, fileName);
-                IReverser reverser = new FileManager.Reverser();
+                FileFactory<IFile> factory = new FileFactory<IFile>();
+                string[] arguments = { fileName };
+                textFile = factory.Create<TextFile>(arguments);
+                IReverser reverser = new Reverser.Reverser();
                 ITextFileReverser textFileReverser = new TextFileReverser(textFile, reverser);
                 var reversed = textFileReverser.ReverseTextFileContents(textFile.FileName);
                 Console.Write(reversed);

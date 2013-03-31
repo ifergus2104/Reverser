@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FileManager
+namespace Reverser
 {
     public class Reverser : IReverser
     {

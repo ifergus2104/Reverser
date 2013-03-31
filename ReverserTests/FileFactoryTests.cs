@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 using FileManager;
+using Reverser;
 using NUnit.Framework;
 
 namespace ReverserTests
@@ -11,28 +13,28 @@ namespace ReverserTests
     public class FileFactoryTests
     {
         [Test]
+        [Category("Unit Tests")]
         public void FileFactoryCreateTextFileValidFilenameReturnsValidFile()
         {
-            IFileFactory fileFactory = new FileFactory();
-            Assert.That(fileFactory.Create(FileTypes.Text, "text.file"), Is.TypeOf(typeof(TextFile)));
+            FileFactory<IFile> fileFactory = new FileFactory<IFile>();
+            Assert.That(fileFactory.Create<TextFile>("text.file"), Is.TypeOf(typeof(TextFile)));
         }
 
         [Test]
+        [Category("Unit Tests")]
         public void FileFactoryCreateTextFileMissingFileNameThrowArgumentExceptionError()
         {
-            IFileFactory fileFactory = new FileFactory();
-            var fileFactoryException = Assert.Throws(Is.TypeOf<ArgumentException>().
-                And.Message.EqualTo("Invalid Argument"),
-                delegate { fileFactory.Create(FileTypes.Text, null); });
+            FileFactory<IFile> fileFactory = new FileFactory<IFile>();
+            Assert.That(fileFactory.Create<TextFile>(null), Is.TypeOf(typeof(TextFile)));
         }
 
         [Test]
+        [Category("Unit Tests")]
+        [ExpectedException(typeof(TargetInvocationException))]
         public void FileFactoryCreateTextFileEmptyFileNameThrowArgumentExceptionError()
         {
-            IFileFactory fileFactory = new FileFactory();
-            var fileFactoryException = Assert.Throws(Is.TypeOf<ArgumentException>().
-                And.Message.EqualTo("Invalid Argument"),
-                delegate { fileFactory.Create(FileTypes.Text, string.Empty); });
+            FileFactory<IFile> fileFactory = new FileFactory<IFile>();
+            IFile textFile = fileFactory.Create<TextFile>(string.Empty);
         }
     }
 }

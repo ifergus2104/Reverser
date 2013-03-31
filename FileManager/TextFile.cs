@@ -10,11 +10,11 @@ namespace FileManager
     {
         private string _fileName;
 
-        internal TextFile()
+        public TextFile()
         {
         }
 
-        internal TextFile(string fileName)
+        public TextFile(string fileName)
         {
             this.FileName = fileName;
         }

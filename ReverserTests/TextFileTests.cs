@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using FileManager;
+using Reverser;
+using FileReverser;
 using NUnit.Framework;
 using Moq;
 
@@ -65,8 +67,8 @@ namespace ReverserTests
 
         private static IFile CreateTextFile(string fileName)
         {
-            IFileFactory fileFactory = new FileFactory();
-            IFile textFile = fileFactory.Create(FileTypes.Text, fileName);
+            FileFactory<IFile> fileFactory = new FileFactory<IFile>();
+            IFile textFile = fileFactory.Create<TextFile>(fileName);
             return textFile;
         }
     }

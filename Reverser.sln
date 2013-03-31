@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverserConsole", "Reverser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager", "FileManager\FileManager.csproj", "{C72C5E0E-0762-4304-A905-0A196BCE0220}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileReverser", "FileReverser\FileReverser.csproj", "{631FB593-EBE9-4C4A-958B-0EA68496F9B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,16 @@ Global
 		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C72C5E0E-0762-4304-A905-0A196BCE0220}.Release|x86.ActiveCfg = Release|Any CPU
+		{631FB593-EBE9-4C4A-958B-0EA68496F9B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{631FB593-EBE9-4C4A-958B-0EA68496F9B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{631FB593-EBE9-4C4A-958B-0EA68496F9B8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{631FB593-EBE9-4C4A-958B-0EA68496F9B8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{631FB593-EBE9-4C4A-958B-0EA68496F9B8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{631FB593-EBE9-4C4A-958B-0EA68496F9B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{631FB593-EBE9-4C4A-958B-0EA68496F9B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{631FB593-EBE9-4C4A-958B-0EA68496F9B8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{631FB593-EBE9-4C4A-958B-0EA68496F9B8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{631FB593-EBE9-4C4A-958B-0EA68496F9B8}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

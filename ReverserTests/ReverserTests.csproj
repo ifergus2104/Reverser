@@ -58,6 +58,10 @@
       <Project>{C72C5E0E-0762-4304-A905-0A196BCE0220}</Project>
       <Name>FileManager</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FileReverser\FileReverser.csproj">
+      <Project>{631FB593-EBE9-4C4A-958B-0EA68496F9B8}</Project>
+      <Name>FileReverser</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MoodReverser\Reverser.csproj">
       <Project>{6AE264CE-310F-475C-BE7F-9D43E1CFA9F7}</Project>
       <Name>Reverser</Name>

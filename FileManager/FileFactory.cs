@@ -2,16 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 
 namespace FileManager
 {
-    public sealed class FileFactory : IFileFactory
+    public class FileFactory<T>
     {
-        public IFile Create(FileTypes fileType, string fileName)
+        private readonly Dictionary<string, Type> _factoryDictionary =
+            new Dictionary<string, Type>();
+
+        public FileFactory()
         {
-            if (fileType == FileTypes.Text)
-                return new TextFile(fileName);
-            throw new ArgumentOutOfRangeException("Invalid File Type");
+            Type[] fileTyepes = Assembly.GetAssembly(typeof(T)).GetTypes();
+
+            foreach (Type type in fileTyepes)
+            {
+                if (!typeof(T).IsAssignableFrom(type) || type == typeof(T))
+                    continue;
+                _factoryDictionary.Add(type.Name, type);
+            }
+        }
+
+        public T Create<F>(params object[] args)
+        {
+            return (T) Activator.CreateInstance(_factoryDictionary[typeof(F).Name], args);
         }
     }
 }

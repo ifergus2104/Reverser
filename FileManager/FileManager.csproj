@@ -8,7 +8,7 @@
     <ProjectGuid>{C72C5E0E-0762-4304-A905-0A196BCE0220}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FileManager</RootNamespace>
+    <RootNamespace>Reverser</RootNamespace>
     <AssemblyName>FileManager</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="FileFactory.cs" />
     <Compile Include="IFile.cs" />
-    <Compile Include="IFileFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextFile.cs" />
   </ItemGroup>
