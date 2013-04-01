@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
+using System.Linq;
 
 namespace FileManager
 {
@@ -16,35 +14,34 @@ namespace FileManager
 
         public TextFile(string fileName)
         {
-            this.FileName = fileName;
+            FileName = fileName;
         }
 
         public bool FileExists(string fileName)
         {
-            this.FileName = fileName;
-            bool exists = File.Exists(this._fileName);
+            FileName = fileName;
+            var exists = File.Exists(_fileName);
             return exists;
         }
 
         public string FileName
         {
-            get { return this._fileName; }
+            get { return _fileName; }
             set 
             {
                 if (InValidFileName(value)) throw new ArgumentException("Invalid Argument");
-                this._fileName = value; 
+                _fileName = value; 
             }
         }
 
         public string GetFileContents(string fileName)
         {
-            this.FileName = fileName;
+            FileName = fileName;
             var textFileContents = string.Empty;
-            if (this.FileExists(this.FileName))
+            if (FileExists(FileName))
             {
-                var allLines = File.ReadAllLines(this.FileName);
-                foreach (string line in allLines)
-                    textFileContents = textFileContents + line;
+                var allLines = File.ReadAllLines(FileName);
+                textFileContents = allLines.Aggregate(textFileContents, (current, line) => current + line);
             }
             else
                 throw new FileNotFoundException("File Not Found");
@@ -53,7 +50,7 @@ namespace FileManager
 
         private bool InValidFileName(string fileName)
         {
-            bool inValid = ((fileName == string.Empty) || (fileName == null));
+            var inValid = string.IsNullOrEmpty(fileName);
             return inValid;
         }
     }

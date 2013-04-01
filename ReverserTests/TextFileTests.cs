@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
 using FileManager;
-using Reverser;
-using FileReverser;
 using NUnit.Framework;
-using Moq;
 
 namespace ReverserTests
 {
@@ -19,9 +13,9 @@ namespace ReverserTests
         public void EmptyStringFileExistsThrowsValidArgumentExceptionException()
         {
             IFile textFile = CreateTextFile("text.file");
-            var textFileException = Assert.Throws(Is.TypeOf<ArgumentException>().
-                And.Message.EqualTo("Invalid Argument"),
-                delegate { textFile.FileExists(string.Empty); });
+            Assert.Throws(Is.TypeOf<ArgumentException>().
+                             And.Message.EqualTo("Invalid Argument"),
+                          () => textFile.FileExists(string.Empty));
         }
 
         [Test]
@@ -29,17 +23,17 @@ namespace ReverserTests
         public void NullStringFileExistsThrowsValidArgumentExceptionException()
         {
             IFile textFile = CreateTextFile("text.file");
-            var textFileException = Assert.Throws(Is.TypeOf<ArgumentException>().
-                And.Message.EqualTo("Invalid Argument"),
-                delegate { textFile.FileExists(null); });
+            Assert.Throws(Is.TypeOf<ArgumentException>().
+                             And.Message.EqualTo("Invalid Argument"),
+                          () => textFile.FileExists(null));
         }
 
         [Test]
         [Category("Integration Test")]
         public void ValidFileNameGetFileContentsReturnsValidText()
         {
-            var fileName = @"c:\Github\TextToReverse.txt";
-            var expected = "abcdef12345";
+            const string fileName = @"c:\Github\TextToReverse.txt";
+            const string expected = "abcdef12345";
             IFile textFile = CreateTextFile(fileName);
             Assert.That(expected, Is.EqualTo(textFile.GetFileContents(fileName)));
         }
@@ -48,8 +42,8 @@ namespace ReverserTests
         [Category("Integration Test")]
         public void ValidFileNameFileExistsReturnsTrue()
         {
-            var fileName = @"c:\Github\TextToReverse.txt";
-            var expected = true;
+            const string fileName = @"c:\Github\TextToReverse.txt";
+            const bool expected = true;
             IFile textFile = CreateTextFile("text.file");
             Assert.That(expected, Is.EqualTo(textFile.FileExists(fileName)));
         }
@@ -58,16 +52,16 @@ namespace ReverserTests
         [Category("Integration Test")]
         public void MissingFileOnCallingGetFileContentsThrowsFileNotFoundException()
         {
-            var fileName = @"c:\github\MissingTextToReverse.txt";
+            const string fileName = @"c:\github\MissingTextToReverse.txt";
             IFile textFile = CreateTextFile(fileName);
-            var reverserFileException = Assert.Throws(Is.TypeOf<FileNotFoundException>().
-                And.Message.EqualTo("File Not Found"),
-                delegate { textFile.GetFileContents("text.file"); });
+            Assert.Throws(Is.TypeOf<FileNotFoundException>().
+                             And.Message.EqualTo("File Not Found"),
+                          () => textFile.GetFileContents("text.file"));
         }
 
         private static IFile CreateTextFile(string fileName)
         {
-            FileFactory<IFile> fileFactory = new FileFactory<IFile>();
+            var fileFactory = new FileFactory<IFile>();
             IFile textFile = fileFactory.Create<TextFile>(fileName);
             return textFile;
         }

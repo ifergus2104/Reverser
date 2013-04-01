@@ -8,7 +8,7 @@
     <ProjectGuid>{C72C5E0E-0762-4304-A905-0A196BCE0220}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Reverser</RootNamespace>
+    <RootNamespace>FileManager</RootNamespace>
     <AssemblyName>FileManager</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

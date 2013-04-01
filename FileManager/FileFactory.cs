@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Reflection;
 
 namespace FileManager
@@ -23,9 +21,9 @@ namespace FileManager
             }
         }
 
-        public T Create<F>(params object[] args)
+        public T Create<TF>(params object[] args)
         {
-            return (T) Activator.CreateInstance(_factoryDictionary[typeof(F).Name], args);
+            return (T) Activator.CreateInstance(_factoryDictionary[typeof(TF).Name], args);
         }
     }
 }

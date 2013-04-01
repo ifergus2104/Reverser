@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using FileManager;
 using Reverser;
 
@@ -9,26 +6,23 @@ namespace FileReverser
 {
     public class TextFileReverser : ITextFileReverser
     {
-        private IFile _textFile;
-        private IReverser _reverser;
-
-        private TextFileReverser()
-        {
-        }
+        private readonly IFile _textFile;
+        private readonly IReverser _reverser;
 
         public TextFileReverser(IFile textFile, IReverser reverser)
         {
+            const string argumentText = "Invalid Argument";
             if (InValidArguments(textFile, reverser)) 
-                throw new ArgumentNullException("Invalid Argument");
-            this._textFile = textFile;
-            this._reverser = reverser;
+                throw new ArgumentNullException(argumentText);
+            _textFile = textFile;
+            _reverser = reverser;
         }
 
         public string ReverseTextFileContents(string fileName)
         {
-            if (this._textFile.FileExists(fileName))
+            if (_textFile.FileExists(fileName))
             {
-                var forwardText = this._textFile.GetFileContents(this._textFile.FileName);
+                var forwardText = _textFile.GetFileContents(_textFile.FileName);
                 return _reverser.Reverse(forwardText);
             }
             return string.Empty;

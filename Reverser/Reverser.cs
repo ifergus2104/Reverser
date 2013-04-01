@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Reverser
 {
@@ -11,15 +9,12 @@ namespace Reverser
         {
             if (InValidArgument(forwardText)) throw new ArgumentException("Invalid Argument");
             var reverseChar = forwardText.Reverse();
-            var reverseText = string.Empty;
-            foreach (char character in reverseChar)
-                reverseText += character;
-            return reverseText;
+            return reverseChar.Aggregate(string.Empty, (current, character) => current + character);
         }
 
         private bool InValidArgument(string forwardText)
         {
-            bool inValid = ((forwardText == string.Empty) || (forwardText == null));
+            var inValid = string.IsNullOrEmpty(forwardText);
             return inValid;
         }
     }
