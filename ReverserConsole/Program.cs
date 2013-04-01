@@ -5,25 +5,45 @@ using FileReverser;
 
 namespace ReverserConsole
 {
-    public class Program
+    public static class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             try
-            {                
-                const string fileName = @"c:\github\texttoreverse.txt";
-                var factory = new FileFactory<IFile>();
-                object[] arguments = { fileName };
-                IFile textFile = factory.Create<TextFile>(arguments);
-                IReverser reverser = new Reverser.Reverser();
-                ITextFileReverser textFileReverser = new TextFileReverser(textFile, reverser);
-                var reversed = textFileReverser.ReverseTextFileContents(textFile.FileName);
-                Console.Write(reversed);
+            {
+                if (args.Length != 0) return;
+                Console.WriteLine("Please enter the location of the file to reverse");
+                var inputFile = Console.ReadLine();
+
+                if (args.Length != 0) return;
+                Console.WriteLine("Please enter the location of the file to output reversed text");
+                var outputFile = Console.ReadLine();
+
+                var reversed = CreateReversedOutputFile(inputFile, outputFile);
+
+                Console.WriteLine("inputfile: " + inputFile);
+                Console.WriteLine("has been reversed and output to file: " + outputFile);
+                Console.WriteLine("Reversed content is: " + reversed);
+                
+                if (args.Length != 0) return;
+                var exitText = Console.ReadLine();
+                Console.WriteLine("Please press any key to exit " + exitText);
             }
             catch (Exception e)
             {
                 Console.Write("{0} Exception Caught:", e.Message);
             }
+        }
+
+        private static string CreateReversedOutputFile(string inputFile, string outputFile)
+        {
+            var factory = new FileFactory<IFile>();
+            object[] arguments = {inputFile};
+            IFile textFile = factory.Create<TextFile>(arguments);
+            IReverser reverser = new Reverser.Reverser();
+            ITextFileReverser textFileReverser = new TextFileReverser(textFile, reverser);
+            var reversed = textFileReverser.ReverseTextFileContents(textFile.FileName);
+            return textFile.WriteFileContents(outputFile, reversed) ? reversed : string.Empty;
         }
     }
 }

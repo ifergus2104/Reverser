@@ -14,12 +14,11 @@ namespace ReverserTests
         private Mock<IFile> _mockTextFile;
         private Mock<IReverser> _mockReverser;
 
-        [Test]
-        [Category("Unit Tests")]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Test]        
         public void TextFileReverserNullDependenciesThrowsInvalidArgumentException()
         {
-            var textFileReverser = new TextFileReverser(null, null);
+            Assert.Throws(Is.TypeOf<ArgumentNullException>(), 
+                          () => new TextFileReverser(null, null));
         }
 
         [Test]

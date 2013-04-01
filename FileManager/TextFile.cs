@@ -48,6 +48,17 @@ namespace FileManager
             return textFileContents;
         }
 
+        public bool WriteFileContents(string fileName, string fileContents)
+        {
+            try
+            {
+                File.WriteAllText(fileName, fileContents);
+                return true;
+            }
+            catch (Exception)
+            { return false; }
+        }
+
         private bool InValidFileName(string fileName)
         {
             var inValid = string.IsNullOrEmpty(fileName);
