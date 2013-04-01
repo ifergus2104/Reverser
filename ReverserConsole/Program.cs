@@ -21,9 +21,9 @@ namespace ReverserConsole
 
                 var reversed = CreateReversedOutputFile(inputFile, outputFile);
 
-                Console.WriteLine("inputfile: " + inputFile);
-                Console.WriteLine("has been reversed and output to file: " + outputFile);
-                Console.WriteLine("Reversed content is: " + reversed);
+                Console.WriteLine("the input file: " + inputFile);
+                Console.WriteLine("has been reversed and output to the file: " + outputFile);
+                Console.WriteLine("with the reversed content: " + reversed);
                 
                 if (args.Length != 0) return;
                 var exitText = Console.ReadLine();
