@@ -10,7 +10,7 @@ namespace ReverserTests
     {
         [Test]
         [Category("Unit Tests")]
-        public void EmptyStringFileExistsThrowsValidArgumentExceptionException()
+        public void EmptyStringFileExistsThrowsInvalidArgumentExceptionException()
         {
             IFile textFile = CreateTextFile("text.file");
             Assert.Throws(Is.TypeOf<ArgumentException>().
@@ -20,7 +20,7 @@ namespace ReverserTests
 
         [Test]
         [Category("Unit Tests")]
-        public void NullStringFileExistsThrowsValidArgumentExceptionException()
+        public void NullStringFileExistsThrowsInvalidArgumentExceptionException()
         {
             IFile textFile = CreateTextFile("text.file");
             Assert.Throws(Is.TypeOf<ArgumentException>().

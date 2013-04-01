@@ -9,7 +9,7 @@ namespace ReverserTests
     {
         [Test]
         [Category("Unit Tests")]
-        public void ValidMultipleCharacterTextReversalReturnsValidReversedText()
+        public void ReverseValidMultipleCharacterTextReturnsValidReversedText()
         {
             const string expected = "fedcba";
             IReverser reverser = new Reverser.Reverser();
@@ -18,7 +18,7 @@ namespace ReverserTests
 
         [Test]
         [Category("Unit Tests")]
-        public void ValidOneCharacterTextReversalReturnsValidOneCharacterText()
+        public void ReverseValidOneCharacterTextReturnsValidOneCharacterText()
         {
             const string expected = "a";
             IReverser reverser = new Reverser.Reverser();
@@ -27,7 +27,7 @@ namespace ReverserTests
 
         [Test]
         [Category("Unit Tests")]
-        public void ValidMixedNumericalCharacterTextReversalReturnsValidReversedText()
+        public void ReverseValidMixedNumericalCharacterTextReturnsValidReversedText()
         {
             const string expected = "4321fedcba";
             IReverser reverser = new Reverser.Reverser();
@@ -36,7 +36,7 @@ namespace ReverserTests
 
         [Test]
         [Category("Unit Tests")]
-        public void EmptyStringTextReversalThrowsValidArgumentExceptionError()
+        public void ReverseEmptyStringTextThrowsInvalidArgumentExceptionError()
         {
             IReverser reverser = new Reverser.Reverser();
             Assert.Throws(Is.TypeOf<ArgumentException>().
@@ -46,7 +46,7 @@ namespace ReverserTests
 
         [Test]
         [Category("Unit Tests")]
-        public void NullTextReversalThrowsValidArgumentExceptionError()
+        public void ReverseNullTextThrowsInvalidArgumentExceptionError()
         {
             IReverser reverser = new Reverser.Reverser();
             Assert.Throws(Is.TypeOf<ArgumentException>().

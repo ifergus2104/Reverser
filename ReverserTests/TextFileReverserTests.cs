@@ -17,14 +17,14 @@ namespace ReverserTests
         [Test]
         [Category("Unit Tests")]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void NullDependenciesTextFileReverserThrowsInvalidArgumentException()
+        public void TextFileReverserNullDependenciesThrowsInvalidArgumentException()
         {
             var textFileReverser = new TextFileReverser(null, null);
         }
 
         [Test]
         [Category("Unit Test")]
-        public void ReverseTextFileContentsChecksIfFileExists()
+        public void ReverseTextFileContentsChecksIfAnyFileExists()
         {
             _mockTextFile = new Mock<IFile>();
             _mockReverser = new Mock<IReverser>();
@@ -48,7 +48,7 @@ namespace ReverserTests
 
         [Test]
         [Category("Unit Test")]
-        public void ReverseTextFileContentsCallsGetFileContents()
+        public void ReverseTextFileContentsExistingFileCallsGetFileContents()
         {
             _mockTextFile = new Mock<IFile>();
             _mockReverser = new Mock<IReverser>();
@@ -61,7 +61,7 @@ namespace ReverserTests
 
         [Test]
         [Category("Unit Test")]
-        public void InvalidReverseTextFileContentsDoesNotCallGetFileContents()
+        public void ReverseTextFileContentsMissingFileDoesNotCallGetFileContents()
         {
             _mockTextFile = new Mock<IFile>();
             _mockReverser = new Mock<IReverser>();
