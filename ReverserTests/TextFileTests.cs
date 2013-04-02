@@ -9,6 +9,26 @@ namespace ReverserTests
     public class TextFileTests
     {
         [Test]
+        [Category("Integration Test")]
+        public void FileNameSetEmptyStringThrowsInvalidArgumentException()
+        {
+            IFile textFile = CreateTextFile("text.file");
+            Assert.Throws(Is.TypeOf<ArgumentException>().
+                             And.Message.EqualTo("Invalid Argument"),
+                          () => textFile.FileName = string.Empty);
+        }
+
+        [Test]
+        [Category("Integration Test")]
+        public void FileNameSetNullThrowsInvalidArgumentException()
+        {
+            IFile textFile = CreateTextFile("text.file");
+            Assert.Throws(Is.TypeOf<ArgumentException>().
+                             And.Message.EqualTo("Invalid Argument"),
+                          () => textFile.FileName = null);
+        }
+
+        [Test]
         [Category("Integration Tests")]
         public void FileExistsEmptyStringThrowsInvalidArgumentExceptionException()
         {
@@ -61,11 +81,33 @@ namespace ReverserTests
 
         [Test]
         [Category("Integration Test")]
+        public void GetFileContentsStringEmptyThrowsInvalidArgumentException()
+        {
+            const string fileName = @"c:\missing\TextToReverse.txt";
+            IFile textFile = CreateTextFile(fileName);
+            Assert.Throws(Is.TypeOf<ArgumentException>().
+                             And.Message.EqualTo("Invalid Argument"),
+                          () => textFile.GetFileContents(string.Empty));
+        }
+
+        [Test]
+        [Category("Integration Test")]
+        public void GetFileContentsNullThrowsInvalidArgumentException()
+        {
+            const string fileName = @"c:\missing\TextToReverse.txt";
+            IFile textFile = CreateTextFile(fileName);
+            Assert.Throws(Is.TypeOf<ArgumentException>().
+                             And.Message.EqualTo("Invalid Argument"),
+                          () => textFile.GetFileContents(null));
+        }
+
+        [Test]
+        [Category("Integration Test")]
         public void WriteFileContentsValidFileNameCreateFileReturnsTrue()
         {
             var fileName = GetSetting();
             IFile textFile = CreateTextFile(fileName);
-            const string fileContents = "abcdef";
+            const string fileContents = "abcdef12345";
             const bool expected = true;
             Assert.That(expected, Is.EqualTo(textFile.WriteFileContents(fileName, fileContents)));
         }

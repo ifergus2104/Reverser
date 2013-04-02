@@ -24,12 +24,12 @@ namespace ReverserTests
         }
 
         [Test]
-        [Category("Unit Tests")]
-        [ExpectedException(typeof(TargetInvocationException))]
+        [Category("Unit Tests")]        
         public void FileFactoryCreateTextFileEmptyFileNameThrowTargetInvocationException()
         {
             var fileFactory = new FileFactory<IFile>();
-            fileFactory.Create<TextFile>(string.Empty);
+            Assert.Throws(Is.TypeOf<TargetInvocationException>(),
+                         () => fileFactory.Create<TextFile>(string.Empty));
         }
     }
 }
