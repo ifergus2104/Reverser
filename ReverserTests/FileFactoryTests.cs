@@ -17,7 +17,7 @@ namespace ReverserTests
 
         [Test]
         [Category("Unit Tests")]
-        public void FileFactoryCreateTextFileMissingFileNameReturnsValidFile()
+        public void FileFactoryCreateTextFileNullFileNameReturnsValidFile()
         {
             var fileFactory = new FileFactory<IFile>();
             Assert.That(fileFactory.Create<TextFile>(null), Is.TypeOf(typeof(TextFile)));

@@ -130,9 +130,9 @@ namespace ReverserTests
             return textFile;
         }
 
-        private string GetSetting()
+        private static string GetSetting()
         {
-            return Properties.Settings.Default.textfiletoreverse;
+            return Properties.Settings.Default.TextfileToReverse;
         }
     }
 }

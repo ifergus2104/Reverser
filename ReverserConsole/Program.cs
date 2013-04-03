@@ -21,13 +21,18 @@ namespace ReverserConsole
 
                 var reversed = CreateReversedOutputFile(inputFile, outputFile);
 
-                Console.WriteLine("the input file: " + inputFile);
-                Console.WriteLine("has been reversed and output to the file: " + outputFile);
-                Console.WriteLine("with the reversed content: " + reversed);
-                
-                if (args.Length != 0) return;
-                var exitText = Console.ReadLine();
-                Console.WriteLine("Please press any key to exit " + exitText);
+                if (string.IsNullOrEmpty(reversed))
+                    Console.WriteLine("File not created.  Exiting ...");
+                else
+                {
+                    Console.WriteLine("the input file: " + inputFile);
+                    Console.WriteLine("has been reversed and output to the file: " + outputFile);
+                    Console.WriteLine("with the reversed content: " + reversed);
+
+                    if (args.Length != 0) return;
+                    var exitText = Console.ReadLine();
+                    Console.WriteLine("Please press any key to exit " + exitText);
+                }
             }
             catch (Exception e)
             {

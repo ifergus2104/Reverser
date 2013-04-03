@@ -12,7 +12,7 @@ namespace Reverser
             return reverseChar.Aggregate(string.Empty, (current, character) => current + character);
         }
 
-        private bool InValidArgument(string forwardText)
+        private static bool InValidArgument(string forwardText)
         {
             var inValid = string.IsNullOrEmpty(forwardText);
             return inValid;

@@ -28,9 +28,9 @@ namespace FileReverser
             return string.Empty;
         }
 
-        private bool InValidArguments(IFile textFile, IReverser reverser)
+        private static bool InValidArguments(IFile textFile, IReverser reverser)
         {
-            bool inValid = ((textFile == null) || (reverser == null));
+            var inValid = ((textFile == null) || (reverser == null));
             return inValid;
         }
     }
