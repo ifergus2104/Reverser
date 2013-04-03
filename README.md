@@ -17,7 +17,7 @@ And the contents of the file contains the reverse of the input as: {output text}
 Specification By Example
 
 Given I have a command line window open
-And I type in “{folder}\texttoreverse.txt” of saved text file that contains the text “abcdef12345”
+And I type in “{folder}\texttoreverse.txt” of a saved text file that contains the text “abcdef12345”
 And I type in “{folder}\textreversed.txt”
 When press return
 Then the command line reads “the input file: “{folder}\texttoreverse.txt”  has been reversed 
